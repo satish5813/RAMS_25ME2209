@@ -111,7 +111,32 @@ footer{padding:30px 40px;color:var(--muted);font-size:13px;font-family:"Archivo"
 .who-name{font-weight:800;font-size:16px;color:var(--ink);margin:2px 0}
 .who a{padding:0;border:none;display:inline;color:var(--accent);text-decoration:underline}
 .who a:hover{background:none}
-</style></head><body>
+
+.discussion-shell{max-width:980px;margin:28px auto 12px;padding:24px 20px;background:var(--paper);border:1px solid var(--rule);border-radius:16px;box-shadow:0 18px 44px rgba(19,35,47,.06)}
+.discussion-header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
+.discussion-header h2{margin:0;font-size:clamp(22px,2vw,30px)}
+.tutor-console-toggle{border:none;border-radius:999px;padding:10px 16px;background:var(--ink);color:var(--paper);font-family:"Archivo",sans-serif;font-weight:700;cursor:pointer}
+.discussion-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:18px}
+.discussion-form-panel,.discussion-thread-panel,.tutor-panel{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:18px}
+.discussion-form{display:grid;gap:14px}
+.discussion-form label,.tutor-panel label{display:grid;gap:8px;font-family:"Archivo",sans-serif;font-weight:600;font-size:13px;color:var(--muted)}
+.discussion-form input,.discussion-form textarea,.tutor-panel select,.tutor-panel textarea{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:10px 12px;border-radius:8px;font:15px/1.5 "Source Serif 4",Georgia,serif;resize:vertical}
+.discussion-form textarea,.tutor-panel textarea{min-height:110px}
+.discussion-thread{display:grid;gap:12px}
+.discussion-message{border:1px solid var(--rule);border-left:4px solid var(--yellow);background:var(--paper);border-radius:10px;padding:14px 14px 12px}
+.discussion-message.tutor{border-left-color:var(--accent)}
+.discussion-message.pending{border-left-color:var(--muted)}
+.discussion-author{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;font-family:"Archivo",sans-serif;font-size:12px;color:var(--muted)}
+.discussion-author strong{font-size:13px;color:var(--ink)}
+.discussion-message p{margin:0;white-space:pre-wrap;word-break:break-word;line-height:1.6}
+.form-status{min-height:18px;font-size:13px;color:var(--muted);font-family:"Archivo",sans-serif}
+.form-status.success{color:var(--ok)}
+.form-status.error{color:var(--no)}
+.tutor-panel{margin-top:18px;display:none}
+.tutor-panel.visible{display:block}
+.reply-button{margin-top:8px;background:var(--chip);color:var(--ink);border:1px solid var(--rule);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;font-family:"Archivo",sans-serif}
+.empty-state{padding:16px;background:var(--paper);border:1px dashed var(--rule);border-radius:10px;color:var(--muted);font-family:"Archivo",sans-serif;font-size:13px}
+@media (max-width:700px){.discussion-grid{grid-template-columns:1fr}.discussion-header{flex-direction:column;align-items:flex-start}.discussion-shell{padding:18px 14px;margin:22px 12px 10px}}</style></head><body>
 <header class="top"><button id="menu" type="button" aria-label="Open course contents">Menu</button><div class="brand">Robotics and Mechatronic Systems<small>25ME2209 · K L Deemed to be University</small></div><div class="sp"></div><button id="theme" type="button">Dark mode</button></header>
 <div class="layout"><nav class="nav" aria-label="Course contents"><div class="who"><div class="who-role">Course Coordinator and Instructor</div><div class="who-name">Dr A Srinath</div><div>Professor, Mechanical Engineering</div><div>Dean, Skill Development</div><div>Emp. ID: 1672</div><div><a href="mailto:srinath@kluniversity.in">srinath@kluniversity.in</a></div></div><a href="#home">Course home</a><a href="#projects">Sample projects</a><details><summary>Module 1 <span class="co">CO1</span></summary><a href="#m1">Overview: Robot Fundamentals and Mechatronic Systems</a><div class="grp">Lecture SLMs</div><a href="#m1-l1">L1 · Course orientation; robot anatomy and robot classifications</a><a href="#m1-l2">L2 · Workspace, end effectors, industrial robots and mechatronic system architecture</a><div class="grp">Practical SLMs</div><a href="#m1-p1">P1 · Industrial robot familiarization and component identification</a><div class="grp">Apply and explore</div><a href="#m1-cases">Case studies (3)</a><a href="#m1-vl">Virtual labs (3)</a><a href="#m1-quiz">Concept check (10)</a></details><details><summary>Module 2 <span class="co">CO2</span></summary><a href="#m2">Overview: Robot Kinematics</a><div class="grp">Lecture SLMs</div><a href="#m2-l3">L3 · Coordinate systems, reference frames and rotation matrices</a><a href="#m2-l4">L4 · Homogeneous transformation matrices</a><a href="#m2-l5">L5 · D-H representation of manipulators</a><a href="#m2-l6">L6 · Forward kinematics of industrial manipulators</a><a href="#m2-l7">L7 · Inverse kinematics by analytical and geometric methods</a><a href="#m2-l8">L8 · Jacobian, velocity, singularity and manipulability</a><div class="grp">Practical SLMs</div><a href="#m2-p2">P2 · Rotation and homogeneous transformations in Python</a><a href="#m2-p3">P3 · D-H parameters and forward kinematics in RoboAnalyzer</a><a href="#m2-p4">P4 · Inverse kinematics, Jacobian and workspace of a two-link manipulator</a><div class="grp">Apply and explore</div><a href="#m2-cases">Case studies (3)</a><a href="#m2-vl">Virtual labs (3)</a><a href="#m2-quiz">Concept check (10)</a></details><details><summary>Module 3 <span class="co">CO3</span></summary><a href="#m3">Overview: Robot Dynamics and Trajectory Planning</a><div class="grp">Lecture SLMs</div><a href="#m3-l9">L9 · Generalized coordinates, energy of robotic systems and Lagrangian formulation</a><a href="#m3-l10">L10 · Newton–Euler formulation and dynamic model of a two-link manipulator</a><a href="#m3-l11">L11 · Joint-space and Cartesian-space trajectory planning</a><a href="#m3-l12">L12 · Polynomial trajectory planning and Modules 1–3 consolidation</a><div class="grp">Practical SLMs</div><a href="#m3-p5">P5 · Robot dynamics of a two-link manipulator</a><a href="#m3-p6">P6 · Trajectory planning of a two-link manipulator</a><div class="grp">Apply and explore</div><a href="#m3-cases">Case studies (3)</a><a href="#m3-vl">Virtual labs (3)</a><a href="#m3-quiz">Concept check (10)</a></details><details><summary>Module 4 <span class="co">CO4</span></summary><a href="#m4">Overview: Sensors, Actuators and Embedded Systems</a><div class="grp">Lecture SLMs</div><a href="#m4-l13">L13 · Encoders and IMUs</a><a href="#m4-l14">L14 · Force/torque and vision sensors; sensor selection</a><a href="#m4-l15">L15 · Electric, hydraulic and pneumatic actuators</a><a href="#m4-l16">L16 · Arduino, STM32 and ESP32 interfacing</a><div class="grp">Practical SLMs</div><a href="#m4-p7">P7 · Sensor interfacing: rotary encoder and IMU with Arduino/ESP32</a><a href="#m4-p8">P8 · Actuator control: servo, stepper and DC motor with PWM</a><div class="grp">Apply and explore</div><a href="#m4-cases">Case studies (3)</a><a href="#m4-vl">Virtual labs (3)</a><a href="#m4-quiz">Concept check (10)</a></details><details><summary>Module 5 <span class="co">CO5</span></summary><a href="#m5">Overview: Control Systems and PLC</a><div class="grp">Lecture SLMs</div><a href="#m5-l17">L17 · Open- and closed-loop control and transfer functions</a><a href="#m5-l18">L18 · PID control and tuning</a><a href="#m5-l19">L19 · PLC architecture and ladder-logic programming</a><a href="#m5-l20">L20 · Industrial automation case studies and PLC–robot integration</a><div class="grp">Practical SLMs</div><a href="#m5-p9">P9 · PID implementation for DC motor speed control</a><a href="#m5-p10">P10 · PLC ladder-logic programming in OpenPLC: conveyor sorting</a><div class="grp">Apply and explore</div><a href="#m5-cases">Case studies (3)</a><a href="#m5-vl">Virtual labs (3)</a><a href="#m5-quiz">Concept check (10)</a></details><details><summary>Module 6 <span class="co">CO6</span></summary><a href="#m6">Overview: Robot Programming and Modern Robots</a><div class="grp">Lecture SLMs</div><a href="#m6-l21">L21 · Python and RoboAnalyzer for robot simulation</a><a href="#m6-l22">L22 · ROS2 fundamentals</a><a href="#m6-l23">L23 · Mobile robots, AGVs, collaborative robots, SLAM and robot vision</a><a href="#m6-l24">L24 · AI in robotics; analysis of simulated robot behaviour; course consolidation</a><div class="grp">Practical SLMs</div><a href="#m6-p11">P11 · ROS2 fundamentals with Turtlesim: workspace, nodes and topics</a><a href="#m6-p12">P12 · Simple autonomous navigation in ROS2/Turtlesim: go-to-goal controller</a><div class="grp">Apply and explore</div><a href="#m6-cases">Case studies (3)</a><a href="#m6-vl">Virtual labs (3)</a><a href="#m6-quiz">Concept check (10)</a></details></nav><main><section class="page" id="home"><div class="read hero"><p class="sec-label">25ME2209 · B.Tech Mechanical Engineering · Semester 4 · L-T-P-S 2-0-2-0 · 3 credits · 2026-27 Even Semester</p>
 <h1>Robotics and Mechatronic Systems</h1><p class="lede">The complete self-learning material for the course: 24 lecture SLMs, 12 practical SLMs, 18 case studies, 18 virtual labs, six concept checks and 16 sample projects — each with an animated view you can pause and study.</p></div>
@@ -2135,6 +2160,52 @@ plt.plot(8, 8, &#x27;r*&#x27;, ms=12); plt.axis(&#x27;equal&#x27;); plt.legend()
 <div class="check" data-kind="mcq" data-ans="1" data-why="Reward-driven learning."><div class="q"><b>10.</b> Reinforcement learning improves a policy by…</div><label><input type="radio" name="q6-10" value="0"> copying a human</label><label><input type="radio" name="q6-10" value="1"> trial, error and reward</label><label><input type="radio" name="q6-10" value="2"> teach pendant</label><label><input type="radio" name="q6-10" value="3"> ladder logic</label><button type="button">Check</button><div class="fb" role="status"></div></div>
 <button class="quiz-score" type="button">Score all</button><span class="quiz-result" role="status"></span></div></section></main></div>
 <footer>25ME2209 Robotics and Mechatronic Systems · Department of Mechanical Engineering, K L Deemed to be University · Course Coordinator and Instructor: Dr A Srinath (srinath@kluniversity.in). Animations and labs run offline in any modern browser.</footer>
+<section class="discussion-shell" aria-label="SLM discussion form">
+  <div class="discussion-header">
+    <div>
+      <p class="sec-label">End-of-SLM discussion</p>
+      <h2>Ask the course tutor</h2>
+    </div>
+    <button type="button" class="tutor-console-toggle" id="toggleTutorConsole">Course tutor reply</button>
+  </div>
+  <div class="discussion-grid">
+    <div class="discussion-form-panel">
+      <form id="studentDiscussionForm" class="discussion-form">
+        <label>
+          Student name
+          <input type="text" name="studentName" placeholder="Enter your name" required>
+        </label>
+        <label>
+          Student mail ID
+          <input type="email" name="studentMail" placeholder="name@domain.com" required>
+        </label>
+        <label>
+          Your question / doubt
+          <textarea name="studentQuestion" placeholder="Type your question for the course tutor..." required></textarea>
+        </label>
+        <button type="submit" class="btn">Submit to course tutor</button>
+        <div class="form-status" id="discussionStatus"></div>
+      </form>
+    </div>
+    <div class="discussion-thread-panel">
+      <div class="discussion-thread" id="discussionThread"></div>
+    </div>
+  </div>
+  <div class="tutor-panel" id="tutorReplyPanel">
+    <h3>Course tutor reply</h3>
+    <form id="tutorReplyForm">
+      <label>
+        Select question
+        <select id="replyTarget" aria-label="Select discussion to reply to"></select>
+      </label>
+      <label>
+        Tutor response
+        <textarea id="tutorReplyText" placeholder="Reply as the course tutor..." required></textarea>
+      </label>
+      <button type="submit" class="btn">Send tutor reply</button>
+    </form>
+  </div>
+</section>
 <script>"use strict";
 /* ============================================================ palette & helpers */
 const K = { bg: "#0D1922", panel: "#132331", grid: "rgba(150,175,195,.10)", steel: "#8FA6BA", ink: "#E6EDF2",
@@ -2618,4 +2689,207 @@ document.addEventListener("DOMContentLoaded", () => {
   set(matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); tb.onclick = () => set(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
   document.getElementById("menu").onclick = () => document.body.classList.toggle("menu-open");
   show(); requestAnimationFrame(loop); });
+
+const COURSE_TUTOR = { name: "Dr A Srinath", email: "srinath@kluniversity.in" };
+const DISCUSSION_STORE_KEY = "rams_25me2209_slm_discussion_sqlite_v1";
+const discussionState = { db: null };
+
+function escapeHtml(str) {
+  return String(str ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function setDiscussionStatus(text, kind) {
+  const node = document.getElementById("discussionStatus");
+  if (!node) return;
+  node.textContent = text;
+  node.className = "form-status" + (kind ? ` ${kind}` : "");
+}
+
+function persistDiscussionDb() {
+  if (!discussionState.db) return;
+  const bytes = discussionState.db.export();
+  localStorage.setItem(DISCUSSION_STORE_KEY, JSON.stringify(Array.from(bytes)));
+}
+
+async function initDiscussionStore() {
+  if (discussionState.db) return;
+  try {
+    if (!window.initSqlJs) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js";
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("SQLite library failed to load."));
+        document.head.appendChild(script);
+      });
+    }
+    const SQL = window.initSqlJs({
+      locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`
+    });
+    const raw = localStorage.getItem(DISCUSSION_STORE_KEY);
+    const db = raw ? new SQL.Database(new Uint8Array(JSON.parse(raw))) : new SQL.Database();
+    db.run(`CREATE TABLE IF NOT EXISTS slm_discussion (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      student_name TEXT NOT NULL,
+      student_email TEXT NOT NULL,
+      question TEXT NOT NULL,
+      reply TEXT,
+      tutor_name TEXT,
+      tutor_email TEXT,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      is_resolved INTEGER DEFAULT 0
+    )`);
+    discussionState.db = db;
+    renderDiscussionThreads();
+  } catch (error) {
+    console.error("Discussion DB init failed:", error);
+    const container = document.getElementById("discussionThread");
+    if (container) {
+      container.innerHTML = '<div class="empty-state">SQLite storage could not be loaded in this browser, so the discussion board is temporarily unavailable.</div>';
+    }
+  }
+}
+
+function renderDiscussionThreads() {
+  const container = document.getElementById("discussionThread");
+  const replyTarget = document.getElementById("replyTarget");
+  if (!container || !discussionState.db) return;
+
+  const rows = discussionState.db.exec("SELECT id, student_name, student_email, question, reply, created_at, tutor_name, tutor_email FROM slm_discussion ORDER BY id DESC");
+  const values = rows[0]?.values ?? [];
+
+  if (!values.length) {
+    container.innerHTML = '<div class="empty-state">No doubts submitted yet. After the student completes the SLM, this discussion section will show the question and the course tutor response.</div>';
+    if (replyTarget) replyTarget.innerHTML = '<option value="">No active question</option>';
+    return;
+  }
+
+  const html = values.map(([id, studentName, studentEmail, question, reply, createdAt, tutorName, tutorEmail]) => {
+    const studentHtml = `
+      <div class="discussion-message">
+        <div class="discussion-author"><strong>${escapeHtml(studentName)}</strong><span>${escapeHtml(studentEmail)}</span></div>
+        <p>${escapeHtml(question)}</p>
+      </div>
+    `;
+    const tutorHtml = reply ? `
+      <div class="discussion-message tutor">
+        <div class="discussion-author"><strong>${escapeHtml(tutorName || COURSE_TUTOR.name)}</strong><span>${escapeHtml(tutorEmail || COURSE_TUTOR.email)}</span></div>
+        <p>${escapeHtml(reply)}</p>
+      </div>
+    ` : `
+      <div class="discussion-message pending">
+        <div class="discussion-author"><strong>Course tutor</strong><span>Awaiting response</span></div>
+        <p>Waiting for the course tutor to answer this student question.</p>
+      </div>
+    `;
+    return `
+      <div class="discussion-item">
+        ${studentHtml}
+        ${tutorHtml}
+        <button type="button" class="reply-button" data-reply-id="${id}">Reply as course tutor</button>
+      </div>
+    `;
+  }).join("");
+
+  container.innerHTML = html;
+
+  if (replyTarget) {
+    replyTarget.innerHTML = values.map(([id, studentName, studentEmail]) => `
+      <option value="${id}">${escapeHtml(studentName)} · ${escapeHtml(studentEmail)}</option>
+    `).join("");
+  }
+
+  document.querySelectorAll("[data-reply-id]").forEach(button => {
+    button.addEventListener("click", () => {
+      const selected = button.getAttribute("data-reply-id");
+      const panel = document.getElementById("tutorReplyPanel");
+      if (replyTarget && selected) replyTarget.value = selected;
+      if (panel) panel.classList.add("visible");
+      const textarea = document.getElementById("tutorReplyText");
+      if (textarea) textarea.focus();
+    });
+  });
+}
+
+(async function wireDiscussionForm() {
+  await initDiscussionStore();
+
+  const studentForm = document.getElementById("studentDiscussionForm");
+  if (studentForm) {
+    studentForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      const formData = new FormData(studentForm);
+      const studentName = String(formData.get("studentName") || "").trim();
+      const studentMail = String(formData.get("studentMail") || "").trim();
+      const question = String(formData.get("studentQuestion") || "").trim();
+
+      if (!studentName || !studentMail || !question) {
+        setDiscussionStatus("Please enter the student name, mail ID and question.", "error");
+        return;
+      }
+
+      const mailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!mailPattern.test(studentMail)) {
+        setDiscussionStatus("Enter a valid mail ID.", "error");
+        return;
+      }
+
+      if (!discussionState.db) {
+        setDiscussionStatus("Discussion database is not ready yet. Please try again.", "error");
+        return;
+      }
+
+      discussionState.db.run(
+        "INSERT INTO slm_discussion (student_name, student_email, question, reply, tutor_name, tutor_email, created_at, is_resolved) VALUES (?, ?, ?, '', '', '', datetime('now'), 0)",
+        [studentName, studentMail, question]
+      );
+      persistDiscussionDb();
+      renderDiscussionThreads();
+      studentForm.reset();
+      setDiscussionStatus("Question submitted successfully. The course tutor will reply here.", "success");
+    });
+  }
+
+  const tutorForm = document.getElementById("tutorReplyForm");
+  if (tutorForm) {
+    tutorForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const replyTarget = document.getElementById("replyTarget");
+      const replyText = document.getElementById("tutorReplyText");
+      const selectedId = replyTarget ? String(replyTarget.value) : "";
+      const replyValue = String(replyText ? replyText.value : "").trim();
+
+      if (!selectedId || !replyValue) {
+        setDiscussionStatus("Choose a question and enter the tutor reply.", "error");
+        return;
+      }
+
+      if (!discussionState.db) return;
+
+      discussionState.db.run(
+        "UPDATE slm_discussion SET reply = ?, tutor_name = ?, tutor_email = ?, is_resolved = 1 WHERE id = ?",
+        [replyValue, COURSE_TUTOR.name, COURSE_TUTOR.email, Number(selectedId)]
+      );
+      persistDiscussionDb();
+      renderDiscussionThreads();
+      tutorForm.reset();
+      const panel = document.getElementById("tutorReplyPanel");
+      if (panel) panel.classList.remove("visible");
+      setDiscussionStatus("Tutor reply sent successfully.", "success");
+    });
+  }
+
+  const tutorButton = document.getElementById("toggleTutorConsole");
+  if (tutorButton) {
+    tutorButton.addEventListener("click", () => {
+      const panel = document.getElementById("tutorReplyPanel");
+      if (panel) panel.classList.toggle("visible");
+    });
+  }
+})();
 </script></body></html>
