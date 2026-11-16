@@ -135,12 +135,18 @@ footer{padding:30px 40px;color:var(--muted);font-size:13px;font-family:"Archivo"
 .tutor-panel{margin-top:18px;display:none}
 .tutor-panel.visible{display:block}
 .tutor-access-form{display:grid;gap:12px;margin-bottom:16px}
-.tutor-access-form .inline{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tutor-access-form input{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:10px 12px;border-radius:8px;font:15px/1.5 "Source Serif 4",Georgia,serif}
 .tutor-reply-form{display:grid;gap:12px}
+.tutor-reply-form input,.tutor-reply-form textarea,.tutor-reply-form select{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:10px 12px;border-radius:8px;font:15px/1.5 "Source Serif 4",Georgia,serif}
+.tutor-access-modal{position:fixed;inset:0;background:rgba(10,17,23,.52);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.tutor-access-modal.visible{display:flex}
+.tutor-access-dialog{width:min(440px,92vw);background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:20px;box-shadow:0 18px 40px rgba(9,15,20,.25)}
+.tutor-access-dialog h4{margin:0 0 12px;font-size:1.1rem}
+.tutor-access-dialog label{display:grid;gap:8px;margin-bottom:12px;font-size:14px;color:var(--muted);font-family:"Archivo",sans-serif}
+.tutor-access-dialog input{width:100%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:10px 12px;border-radius:8px;font:15px/1.5 "Source Serif 4",Georgia,serif}
+.tutor-access-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}
 .reply-button{margin-top:8px;background:var(--chip);color:var(--ink);border:1px solid var(--rule);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;font-family:"Archivo",sans-serif}
 .empty-state{padding:16px;background:var(--paper);border:1px dashed var(--rule);border-radius:10px;color:var(--muted);font-family:"Archivo",sans-serif;font-size:13px}
-@media (max-width:700px){.discussion-grid{grid-template-columns:1fr}.discussion-header{flex-direction:column;align-items:flex-start}.discussion-shell{padding:18px 14px;margin:22px 12px 10px}.tutor-access-form .inline{grid-template-columns:1fr}}</style></head><body>
+@media (max-width:700px){.discussion-grid{grid-template-columns:1fr}.discussion-header{flex-direction:column;align-items:flex-start}.discussion-shell{padding:18px 14px;margin:22px 12px 10px}.tutor-access-actions{flex-direction:column-reverse}.tutor-access-actions .btn{width:100%}}</style></head><body>
 <header class="top"><button id="menu" type="button" aria-label="Open course contents">Menu</button><div class="brand">Robotics and Mechatronic Systems<small>25ME2209 · K L Deemed to be University</small></div><div class="sp"></div><button id="theme" type="button">Dark mode</button></header>
 <div class="layout"><nav class="nav" aria-label="Course contents"><div class="who"><div class="who-role">Course Coordinator and Instructor</div><div class="who-name">Dr A Srinath</div><div>Professor, Mechanical Engineering</div><div>Dean, Skill Development</div><div>Emp. ID: 1672</div><div><a href="mailto:srinath@kluniversity.in">srinath@kluniversity.in</a></div></div><a href="#home">Course home</a><a href="#projects">Sample projects</a><details><summary>Module 1 <span class="co">CO1</span></summary><a href="#m1">Overview: Robot Fundamentals and Mechatronic Systems</a><div class="grp">Lecture SLMs</div><a href="#m1-l1">L1 · Course orientation; robot anatomy and robot classifications</a><a href="#m1-l2">L2 · Workspace, end effectors, industrial robots and mechatronic system architecture</a><div class="grp">Practical SLMs</div><a href="#m1-p1">P1 · Industrial robot familiarization and component identification</a><div class="grp">Apply and explore</div><a href="#m1-cases">Case studies (3)</a><a href="#m1-vl">Virtual labs (3)</a><a href="#m1-quiz">Concept check (10)</a></details><details><summary>Module 2 <span class="co">CO2</span></summary><a href="#m2">Overview: Robot Kinematics</a><div class="grp">Lecture SLMs</div><a href="#m2-l3">L3 · Coordinate systems, reference frames and rotation matrices</a><a href="#m2-l4">L4 · Homogeneous transformation matrices</a><a href="#m2-l5">L5 · D-H representation of manipulators</a><a href="#m2-l6">L6 · Forward kinematics of industrial manipulators</a><a href="#m2-l7">L7 · Inverse kinematics by analytical and geometric methods</a><a href="#m2-l8">L8 · Jacobian, velocity, singularity and manipulability</a><div class="grp">Practical SLMs</div><a href="#m2-p2">P2 · Rotation and homogeneous transformations in Python</a><a href="#m2-p3">P3 · D-H parameters and forward kinematics in RoboAnalyzer</a><a href="#m2-p4">P4 · Inverse kinematics, Jacobian and workspace of a two-link manipulator</a><div class="grp">Apply and explore</div><a href="#m2-cases">Case studies (3)</a><a href="#m2-vl">Virtual labs (3)</a><a href="#m2-quiz">Concept check (10)</a></details><details><summary>Module 3 <span class="co">CO3</span></summary><a href="#m3">Overview: Robot Dynamics and Trajectory Planning</a><div class="grp">Lecture SLMs</div><a href="#m3-l9">L9 · Generalized coordinates, energy of robotic systems and Lagrangian formulation</a><a href="#m3-l10">L10 · Newton–Euler formulation and dynamic model of a two-link manipulator</a><a href="#m3-l11">L11 · Joint-space and Cartesian-space trajectory planning</a><a href="#m3-l12">L12 · Polynomial trajectory planning and Modules 1–3 consolidation</a><div class="grp">Practical SLMs</div><a href="#m3-p5">P5 · Robot dynamics of a two-link manipulator</a><a href="#m3-p6">P6 · Trajectory planning of a two-link manipulator</a><div class="grp">Apply and explore</div><a href="#m3-cases">Case studies (3)</a><a href="#m3-vl">Virtual labs (3)</a><a href="#m3-quiz">Concept check (10)</a></details><details><summary>Module 4 <span class="co">CO4</span></summary><a href="#m4">Overview: Sensors, Actuators and Embedded Systems</a><div class="grp">Lecture SLMs</div><a href="#m4-l13">L13 · Encoders and IMUs</a><a href="#m4-l14">L14 · Force/torque and vision sensors; sensor selection</a><a href="#m4-l15">L15 · Electric, hydraulic and pneumatic actuators</a><a href="#m4-l16">L16 · Arduino, STM32 and ESP32 interfacing</a><div class="grp">Practical SLMs</div><a href="#m4-p7">P7 · Sensor interfacing: rotary encoder and IMU with Arduino/ESP32</a><a href="#m4-p8">P8 · Actuator control: servo, stepper and DC motor with PWM</a><div class="grp">Apply and explore</div><a href="#m4-cases">Case studies (3)</a><a href="#m4-vl">Virtual labs (3)</a><a href="#m4-quiz">Concept check (10)</a></details><details><summary>Module 5 <span class="co">CO5</span></summary><a href="#m5">Overview: Control Systems and PLC</a><div class="grp">Lecture SLMs</div><a href="#m5-l17">L17 · Open- and closed-loop control and transfer functions</a><a href="#m5-l18">L18 · PID control and tuning</a><a href="#m5-l19">L19 · PLC architecture and ladder-logic programming</a><a href="#m5-l20">L20 · Industrial automation case studies and PLC–robot integration</a><div class="grp">Practical SLMs</div><a href="#m5-p9">P9 · PID implementation for DC motor speed control</a><a href="#m5-p10">P10 · PLC ladder-logic programming in OpenPLC: conveyor sorting</a><div class="grp">Apply and explore</div><a href="#m5-cases">Case studies (3)</a><a href="#m5-vl">Virtual labs (3)</a><a href="#m5-quiz">Concept check (10)</a></details><details><summary>Module 6 <span class="co">CO6</span></summary><a href="#m6">Overview: Robot Programming and Modern Robots</a><div class="grp">Lecture SLMs</div><a href="#m6-l21">L21 · Python and RoboAnalyzer for robot simulation</a><a href="#m6-l22">L22 · ROS2 fundamentals</a><a href="#m6-l23">L23 · Mobile robots, AGVs, collaborative robots, SLAM and robot vision</a><a href="#m6-l24">L24 · AI in robotics; analysis of simulated robot behaviour; course consolidation</a><div class="grp">Practical SLMs</div><a href="#m6-p11">P11 · ROS2 fundamentals with Turtlesim: workspace, nodes and topics</a><a href="#m6-p12">P12 · Simple autonomous navigation in ROS2/Turtlesim: go-to-goal controller</a><div class="grp">Apply and explore</div><a href="#m6-cases">Case studies (3)</a><a href="#m6-vl">Virtual labs (3)</a><a href="#m6-quiz">Concept check (10)</a></details></nav><main><section class="page" id="home"><div class="read hero"><p class="sec-label">25ME2209 · B.Tech Mechanical Engineering · Semester 4 · L-T-P-S 2-0-2-0 · 3 credits · 2026-27 Even Semester</p>
 <h1>Robotics and Mechatronic Systems</h1><p class="lede">The complete self-learning material for the course: 24 lecture SLMs, 12 practical SLMs, 18 case studies, 18 virtual labs, six concept checks and 16 sample projects — each with an animated view you can pause and study.</p></div>
@@ -2198,16 +2204,6 @@ plt.plot(8, 8, &#x27;r*&#x27;, ms=12); plt.axis(&#x27;equal&#x27;); plt.legend()
   <div class="tutor-panel" id="tutorReplyPanel">
     <h3>Course tutor reply</h3>
     <form id="tutorAccessForm" class="tutor-access-form">
-      <div class="inline">
-        <label>
-          Emp. ID
-          <input type="text" id="tutorEmpId" placeholder="1672" required>
-        </label>
-        <label>
-          Official mail ID
-          <input type="email" id="tutorMail" placeholder="srinath@kluniversity.in" required>
-        </label>
-      </div>
       <button type="submit" class="btn">Unlock tutor access</button>
       <div class="form-status" id="tutorAccessStatus"></div>
     </form>
@@ -2224,6 +2220,24 @@ plt.plot(8, 8, &#x27;r*&#x27;, ms=12); plt.axis(&#x27;equal&#x27;); plt.legend()
     </form>
   </div>
 </section>
+<div class="tutor-access-modal" id="tutorAccessModal" aria-hidden="true">
+  <div class="tutor-access-dialog" role="dialog" aria-modal="true" aria-labelledby="tutorAccessTitle">
+    <h4 id="tutorAccessTitle">Authorized tutor verification</h4>
+    <label>
+      Emp. ID
+      <input type="password" id="tutorEmpId" placeholder="Enter official Emp. ID" autocomplete="off">
+    </label>
+    <label>
+      Official mail ID
+      <input type="password" id="tutorMail" placeholder="Enter official mail ID" autocomplete="off">
+    </label>
+    <div class="tutor-access-actions">
+      <button type="button" class="btn secondary" id="cancelTutorAccess">Cancel</button>
+      <button type="button" class="btn" id="confirmTutorAccess">Verify</button>
+    </div>
+    <div class="form-status" id="tutorModalStatus"></div>
+  </div>
+</div>
 <script>"use strict";
 /* ============================================================ palette & helpers */
 const K = { bg: "#0D1922", panel: "#132331", grid: "rgba(150,175,195,.10)", steel: "#8FA6BA", ink: "#E6EDF2",
@@ -2898,28 +2912,72 @@ function renderDiscussionThreads() {
   }
 
   const tutorAccessForm = document.getElementById("tutorAccessForm");
+  const tutorAccessModal = document.getElementById("tutorAccessModal");
+  const tutorEmpIdInput = document.getElementById("tutorEmpId");
+  const tutorMailInput = document.getElementById("tutorMail");
+  const confirmTutorAccess = document.getElementById("confirmTutorAccess");
+  const cancelTutorAccess = document.getElementById("cancelTutorAccess");
+
+  function openTutorAccessModal() {
+    if (!tutorAccessModal) return;
+    tutorAccessModal.classList.add("visible");
+    if (tutorEmpIdInput) tutorEmpIdInput.value = "";
+    if (tutorMailInput) tutorMailInput.value = "";
+    if (document.getElementById("tutorModalStatus")) {
+      document.getElementById("tutorModalStatus").textContent = "";
+      document.getElementById("tutorModalStatus").className = "form-status";
+    }
+    setTimeout(() => {
+      if (tutorEmpIdInput) tutorEmpIdInput.focus();
+    }, 25);
+  }
+
+  function closeTutorAccessModal() {
+    if (!tutorAccessModal) return;
+    tutorAccessModal.classList.remove("visible");
+  }
+
+  function verifyTutorAccess() {
+    const empId = tutorEmpIdInput ? tutorEmpIdInput.value : "";
+    const email = tutorMailInput ? tutorMailInput.value : "";
+    const modalStatus = document.getElementById("tutorModalStatus");
+
+    if (isTutorAuthorized(empId, email)) {
+      discussionState.tutorAuthorized = true;
+      closeTutorAccessModal();
+      setTutorStatus("Tutor access granted. You may reply to student questions.", "success");
+      const tutorReplyForm = document.getElementById("tutorReplyForm");
+      if (tutorReplyForm) tutorReplyForm.hidden = false;
+      renderDiscussionThreads();
+      return;
+    }
+
+    discussionState.tutorAuthorized = false;
+    const tutorReplyForm = document.getElementById("tutorReplyForm");
+    if (tutorReplyForm) tutorReplyForm.hidden = true;
+    if (modalStatus) {
+      modalStatus.textContent = "Only the authorized tutor can reply. Students can ask questions only.";
+      modalStatus.className = "form-status error";
+    }
+    setTutorStatus("Only the authorized tutor can reply. Students can ask questions only.", "error");
+    setDiscussionStatus("Students may submit questions only. Tutor reply access is restricted.", "error");
+  }
+
   if (tutorAccessForm) {
     tutorAccessForm.addEventListener("submit", event => {
       event.preventDefault();
-      const empIdInput = document.getElementById("tutorEmpId");
-      const mailInput = document.getElementById("tutorMail");
-      const empId = empIdInput ? empIdInput.value : "";
-      const email = mailInput ? mailInput.value : "";
+      openTutorAccessModal();
+    });
+  }
 
-      if (isTutorAuthorized(empId, email)) {
-        discussionState.tutorAuthorized = true;
-        setTutorStatus("Tutor access granted. You may reply to student questions.", "success");
-        const tutorReplyForm = document.getElementById("tutorReplyForm");
-        if (tutorReplyForm) tutorReplyForm.hidden = false;
-        renderDiscussionThreads();
-        return;
-      }
+  if (confirmTutorAccess) {
+    confirmTutorAccess.addEventListener("click", verifyTutorAccess);
+  }
 
-      discussionState.tutorAuthorized = false;
-      const tutorReplyForm = document.getElementById("tutorReplyForm");
-      if (tutorReplyForm) tutorReplyForm.hidden = true;
-      setTutorStatus("Only Emp. ID 1672 with srinath@kluniversity.in can reply. Students can ask questions only.", "error");
-      setDiscussionStatus("Students may submit questions only. Tutor reply access is restricted.", "error");
+  if (cancelTutorAccess) {
+    cancelTutorAccess.addEventListener("click", () => {
+      closeTutorAccessModal();
+      setTutorStatus("Tutor access cancelled.", "error");
     });
   }
 
